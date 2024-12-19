@@ -7,17 +7,17 @@ Con **Laravel 11** y **Sanctum**, construiremos una API moderna que permita a lo
 
 ---
 
-## 🌐 1. Crear un Proyecto Nuevo Usando Laravel Installer
+## 🌐 1. Crear un Proyecto Nuevo Usando Laravel Installer ✅
 Comencemos desde cero creando nuestro proyecto con **Laravel Installer**. Este comando nos prepara el entorno inicial con todos los archivos necesarios. 🌟
 
 ---
 
-## 🔄 2. Instalar Rutas API y Sanctum
+## 🔄 2. Instalar Rutas API y Sanctum ✅
 En este paso instalaremos las dependencias y configuraremos las rutas iniciales para la API. **Sanctum** será la herramienta clave para manejar la autenticación basada en tokens. 🔐
 
 ---
 
-## 🔧 3. Modificar el Modelo y Migración de User
+## 🔧 3. Modificar el Modelo y Migración de User ✅
 
 En este punto:
 1. Actualizaremos el modelo `User` para que soporte **API Tokens**.
@@ -27,19 +27,19 @@ Esto nos dará la base para manejar permisos y roles. 🏛️
 
 ---
 
-## 💡 4. Crear un Controlador de Raíz para la API y una Clase ApiResources
+## 💡 4. Crear un Controlador de Raíz para la API y una Clase ApiResources ✅
 Diseñaremos un controlador base para manejar las respuestas generales de la API y establecer una clase con un formato consistente en nuestras respuestas. 🌐
 
 ---
 
-## 🔒 5. Crear el Controlador de Autenticación
+## 🔒 5. Crear el Controlador de Autenticación  ✅
 
 Este controlador se encargará de manejar la autenticación de usuarios. Las acciones incluyen:
 
-- **Register**: Permite a nuevos usuarios registrarse. 🔑
-- **Login**: Inicio de sesión para usuarios existentes. 🚪
-- **Profile**: Devuelve la información del usuario autenticado. 👤
-- **Logout**: Cierra la sesión de un usuario. 🚫
+- **Register**: Permite a nuevos usuarios registrarse. 🔑 ✅
+- **Login**: Inicio de sesión para usuarios existentes. 🚪 ✅
+- **Profile**: Devuelve la información del usuario autenticado. 👤 ✅
+- **Logout**: Cierra la sesión de un usuario. 🚫  ✅
 
 ---
 

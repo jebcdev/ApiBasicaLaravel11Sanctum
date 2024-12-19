@@ -1,0 +1,1420 @@
+{
+	"info": {
+		"_postman_id": "9a272842-e82d-457f-bc5f-ad745848e4c1",
+		"name": "ApiSanctumTutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30338624"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New User\",\r\n    \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\",\r\n    \"password_confirmation\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "/* {\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n} */\r\n\r\n/* {\r\n     \"email\":\"admin@admin.com\",\r\n    \"password\":\"12345678\"\r\n} */\r\n\r\n{\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qckbOc6QhvSwhncuGTmzEusoxbjW6OsRQvcSyNSy75ac78f1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/profile",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qckbOc6QhvSwhncuGTmzEusoxbjW6OsRQvcSyNSy75ac78f1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "5|r5lBkh0u0LMVENNwjn96upNaAZZgrCYJGBQeo1Hca6a14dc2",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"New Category\",\r\n    \"description\":\"New Category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"categories",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"categories",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"categories",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Statuses",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/statuses",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"New Status\",\r\n    \"description\":\"New Status\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/statuses",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/statuses/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"statuses",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/statuses/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"statuses",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/statuses/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"statuses",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "5|r5lBkh0u0LMVENNwjn96upNaAZZgrCYJGBQeo1Hca6a14dc2",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/tasks",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"user_id\":2,\r\n\"category_id\":2,\r\n\"status_id\":2,\r\n\"name\":\"New Admin Task 2\",\r\n\"description\":\"Testing 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/tasks",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/tasks/102",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tasks",
+										"102"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"user_id\":2,\r\n\"category_id\":2,\r\n\"status_id\":2,\r\n\"name\":\"To Delete New Admin Task 2\",\r\n\"description\":\"To Delete Testing 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/tasks/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tasks",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/tasks/10",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"tasks",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/users",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Neww Usser\",\r\n    \"email\":\"NewwUsser@NewwUsser.com\",\r\n    \"password\":\"12345678\",\r\n    \"password_confirmation\":\"12345678\",\r\n    \"isAdmin\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/users",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/users/1",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"To Delete Neww Usser\",\r\n    \"email\":\"ToDeleteNewwUsser@NewwUsser.com\",\r\n    \"password\":\"12345678\",\r\n    \"password_confirmation\":\"12345678\",\r\n    \"isAdmin\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/users/4",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"users",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/users/1",
+									"protocol": "http",
+									"host": [
+										"apisanctumtutorialtest",
+										"test"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|SaX0Gr059QoYYnv2IEwGIbqOy7tKLc3WArLSJfmbf84d60b7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|SaX0Gr059QoYYnv2IEwGIbqOy7tKLc3WArLSJfmbf84d60b7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"category_id\":2,\r\n\"status_id\":2,\r\n\"name\":\"New User Task 1\",\r\n\"description\":\"User Testing 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/tasks/101",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"category_id\":2,\r\n\"status_id\":2,\r\n\"name\":\"000New User Task 1\",\r\n\"description\":\"000User Testing 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/tasks/101",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Marcada para Eliminar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://apisanctumtutorialtest.test/api/v1/tasks/101",
+							"protocol": "http",
+							"host": [
+								"apisanctumtutorialtest",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"101"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "1|U7UZJoeu7MU7M7t2F1sugrM3lCu0JVkpxA1eTlZY2a75f24e",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apisanctumtutorialtest.test/api/v1/",
+					"protocol": "http",
+					"host": [
+						"apisanctumtutorialtest",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
