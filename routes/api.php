@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\_ApiController;
+use App\Http\Controllers\Api\AdminCategoryController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,14 @@ Route::prefix('/v1')->group(function () {
     });
 
     /* Auth Routes */
+
+    /* Admin Routes */
+    Route::prefix('/admin')->middleware(['auth:sanctum', 'admin'])->group(function () {
+        /* Categories */
+        Route::apiResource('/categories',AdminCategoryController::class)->names('admin.categories');
+        /* Categories */
+    });
+    /* Admin Routes */
 
 
 

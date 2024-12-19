@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9a272842-e82d-457f-bc5f-ad745848e4c1",
+		"_postman_id": "b2f41f4e-26af-4310-bff8-760fc6055af6",
 		"name": "ApiSanctumTutorial",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30338624"
@@ -58,7 +58,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "/* {\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n} */\r\n\r\n/* {\r\n     \"email\":\"admin@admin.com\",\r\n    \"password\":\"12345678\"\r\n} */\r\n\r\n{\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"raw": "/* {\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n} */\r\n\r\n{\r\n     \"email\":\"admin@admin.com\",\r\n    \"password\":\"12345678\"\r\n}\r\n/* \r\n{\r\n     \"email\":\"newuser@newuser.com\",\r\n    \"password\":\"12345678\"\r\n} */",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -66,10 +66,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://apisanctumtutorialtest.test/api/v1/login",
+							"raw": "http://apibasicalaravel11sanctum.test/api/v1/login",
 							"protocol": "http",
 							"host": [
-								"apisanctumtutorialtest",
+								"apibasicalaravel11sanctum",
 								"test"
 							],
 							"path": [
@@ -192,7 +192,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "5|r5lBkh0u0LMVENNwjn96upNaAZZgrCYJGBQeo1Hca6a14dc2",
+											"value": "{{adminToken}}",
 											"type": "string"
 										}
 									]
@@ -206,10 +206,10 @@
 									}
 								],
 								"url": {
-									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories",
+									"raw": "http://apibasicalaravel11sanctum.test/api/v1/admin/categories",
 									"protocol": "http",
 									"host": [
-										"apisanctumtutorialtest",
+										"apibasicalaravel11sanctum",
 										"test"
 									],
 									"path": [
@@ -230,7 +230,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{adminToken}}",
 											"type": "string"
 										}
 									]
@@ -253,10 +253,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories",
+									"raw": "http://apibasicalaravel11sanctum.test/api/v1/admin/categories",
 									"protocol": "http",
 									"host": [
-										"apisanctumtutorialtest",
+										"apibasicalaravel11sanctum",
 										"test"
 									],
 									"path": [
@@ -277,7 +277,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{adminToken}}",
 											"type": "string"
 										}
 									]
@@ -291,10 +291,10 @@
 									}
 								],
 								"url": {
-									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"raw": "http://apibasicalaravel11sanctum.test/api/v1/admin/categories/11",
 									"protocol": "http",
 									"host": [
-										"apisanctumtutorialtest",
+										"apibasicalaravel11sanctum",
 										"test"
 									],
 									"path": [
@@ -302,7 +302,7 @@
 										"v1",
 										"admin",
 										"categories",
-										"10"
+										"11"
 									]
 								}
 							},
@@ -316,7 +316,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{adminToken}}",
 											"type": "string"
 										}
 									]
@@ -339,10 +339,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"raw": "http://apibasicalaravel11sanctum.test/api/v1/admin/categories/11",
 									"protocol": "http",
 									"host": [
-										"apisanctumtutorialtest",
+										"apibasicalaravel11sanctum",
 										"test"
 									],
 									"path": [
@@ -350,7 +350,7 @@
 										"v1",
 										"admin",
 										"categories",
-										"10"
+										"11"
 									]
 								}
 							},
@@ -364,7 +364,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "",
+											"value": "{{adminToken}}",
 											"type": "string"
 										}
 									]
@@ -387,10 +387,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://apisanctumtutorialtest.test/api/v1/admin/categories/10",
+									"raw": "http://apibasicalaravel11sanctum.test/api/v1/admin/categories/11",
 									"protocol": "http",
 									"host": [
-										"apisanctumtutorialtest",
+										"apibasicalaravel11sanctum",
 										"test"
 									],
 									"path": [
@@ -398,7 +398,7 @@
 										"v1",
 										"admin",
 										"categories",
-										"10"
+										"11"
 									]
 								}
 							},
@@ -1415,6 +1415,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "adminToken",
+			"value": "1|73pxLnOuO44mXQOjCVZlglxPbxVB1JedigZl6Ik80375799f",
+			"type": "string"
 		}
 	]
 }

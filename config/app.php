@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://apisanctumtutorialtest.test/'),
+    'url' => env('APP_URL', 'http://apibasicalaravel11sanctum.test/'),
 
     /*
     |--------------------------------------------------------------------------
