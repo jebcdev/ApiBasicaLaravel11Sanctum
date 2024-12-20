@@ -97,7 +97,7 @@ Los administradores tendrán el control total sobre las tareas, incluyendo todas
 
 ---
 
-## 🔧 12. CRUD de Usuarios Desde Admin
+## 🔧 12. CRUD de Usuarios Desde Admin  ✅
 
 El administrador podrá gestionar a los usuarios del sistema:
 - Registrar nuevos usuarios.
@@ -107,7 +107,7 @@ El administrador podrá gestionar a los usuarios del sistema:
 
 ---
 
-## 🔧 13. CRUD de Tareas (Usuarios Registrados)
+## 🔧 13. CRUD de Tareas (Usuarios Registrados)   ✅
 Los usuarios registrados podrán:
 
 - Crear sus propias tareas. 📝

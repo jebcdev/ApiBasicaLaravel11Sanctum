@@ -4,7 +4,9 @@ use App\Http\Controllers\Api\_ApiController;
 use App\Http\Controllers\Api\AdminCategoryController;
 use App\Http\Controllers\Api\AdminStatusController;
 use App\Http\Controllers\Api\AdminTaskController;
+use App\Http\Controllers\Api\AdminUserController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,10 +44,16 @@ Route::prefix('/v1')->group(function () {
         /* Tasks */
         Route::apiResource('/tasks', AdminTaskController::class)->names('admin.tasks');
         /* Tasks */
+
+        /* Users */
+        Route::apiResource('/users', AdminUserController::class)->names('admin.users');
+        /* Users */
     });
     /* Admin Routes */
 
-
+    /* Users Tasks */
+    Route::apiResource('/tasks', TaskController::class)->middleware(['auth:sanctum'])->names('tasks');
+    /* Users Tasks */
 
 
 
