@@ -81,7 +81,7 @@ class AdminCategoryController extends Controller
         try {
             $category->tasks()->delete();
             $category->delete();
-            return ApiResponses::Success('Admin Category Deleted',[]);
+            return ApiResponses::Success('Admin Category Deleted', []);
         } catch (\Throwable $th) {
             throw $th;
         }

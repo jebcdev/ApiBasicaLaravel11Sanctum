@@ -16,7 +16,8 @@ class AdminStatusController extends Controller
     public function index()
     {
         try {
-            
+            $statuses = Status::query()->with('tasks')->orderBy('name', 'ASC')->get();
+            return ApiResponses::Success('Admin Statuses Index', $statuses);
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -28,7 +29,15 @@ class AdminStatusController extends Controller
     public function store(StoreStatusRequest $request)
     {
         try {
-            
+            try {
+                $data = $request->validated();
+    
+                $newRecord = Status::create($data);
+    
+                return ApiResponses::Success('Admin Status Created', $newRecord);
+            } catch (\Throwable $th) {
+                throw $th;
+            }
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -40,7 +49,12 @@ class AdminStatusController extends Controller
     public function show(Status $status)
     {
         try {
-            
+            try {
+                $status->load('tasks');
+                return ApiResponses::Success('Admin Status Details', $status);
+            } catch (\Throwable $th) {
+                throw $th;
+            }
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -52,7 +66,10 @@ class AdminStatusController extends Controller
     public function update(UpdateStatusRequest $request, Status $status)
     {
         try {
-            
+            $data = $request->validated();
+            $status->update($data);
+            $status->load('tasks');
+            return ApiResponses::Success('Admin Status Updated', $status);
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -64,7 +81,9 @@ class AdminStatusController extends Controller
     public function destroy(Status $status)
     {
         try {
-            
+            $status->tasks()->delete();
+            $status->delete();
+            return ApiResponses::Success('Admin Status Deleted', []);
         } catch (\Throwable $th) {
             throw $th;
         }

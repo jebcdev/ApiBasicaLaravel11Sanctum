@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\_ApiController;
 use App\Http\Controllers\Api\AdminCategoryController;
+use App\Http\Controllers\Api\AdminStatusController;
+use App\Http\Controllers\Api\AdminTaskController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +30,18 @@ Route::prefix('/v1')->group(function () {
 
     /* Admin Routes */
     Route::prefix('/admin')->middleware(['auth:sanctum', 'admin'])->group(function () {
+
         /* Categories */
-        Route::apiResource('/categories',AdminCategoryController::class)->names('admin.categories');
+        Route::apiResource('/categories', AdminCategoryController::class)->names('admin.categories');
         /* Categories */
+
+        /* Statuses */
+        Route::apiResource('/statuses', AdminStatusController::class)->names('admin.statuses');
+        /* Statuses */
+
+        /* Tasks */
+        Route::apiResource('/tasks', AdminTaskController::class)->names('admin.tasks');
+        /* Tasks */
     });
     /* Admin Routes */
 

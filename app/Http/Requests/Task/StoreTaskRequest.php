@@ -43,7 +43,7 @@ class StoreTaskRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('tasks', 'name')->ignore($this->status)
+                Rule::unique('tasks', 'name')
             ],
             'description' => [
                 'required',

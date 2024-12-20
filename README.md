@@ -50,15 +50,15 @@ Crearemos la estructura de datos y lógica para los siguientes recursos:
 ### ✅ **Category**  ✅
 Gestionaremos las categorías con funcionalidades completas (CRUD).
 
-### 🔄 **Status**
+### 🔄 **Status** ✅
 Implementaremos un sistema para manejar los estados de las tareas.
 
-### 🛠️ **Task**
+### 🛠️ **Task**  ✅
 Este será el recurso principal de nuestra API, donde los usuarios podrán interactuar con tareas según sus permisos.
 
 ---
 
-## 🛡️ 7. Crear Grupo de Rutas Protegidas por Sanctum
+## 🛡️ 7. Crear Grupo de Rutas Protegidas por Sanctum  ✅
 
 Organizaremos nuestras rutas en grupos para:
 
@@ -70,13 +70,13 @@ Esto mejorará la seguridad y el orden del proyecto. 🔒
 
 ---
 
-## 🔨 8. Crear Middleware de Admin y Grupo de Rutas Protegidas para Admin
+## 🔨 8. Crear Middleware de Admin y Grupo de Rutas Protegidas para Admin  ✅
 
 Implementaremos un middleware personalizado para verificar si un usuario es administrador. Las rutas protegidas serán accesibles solo para estos usuarios con privilegios especiales. 🔑
 
 ---
 
-## 📁 9. CRUD de Categorías Solo para Admin
+## 📁 9. CRUD de Categorías Solo para Admin  ✅
 Los administradores podrán gestionar las categorías mediante un CRUD completo:
 
 - Crear 🌱
@@ -86,13 +86,13 @@ Los administradores podrán gestionar las categorías mediante un CRUD completo:
 
 ---
 
-## 📁 10. CRUD de Estados Solo para Admin
+## 📁 10. CRUD de Estados Solo para Admin  ✅
 
 Los estados también serán gestionados exclusivamente por administradores mediante un CRUD completo. 📊
 
 ---
 
-## 🔑 11. CRUD de Tareas (Admin Registrados)
+## 🔑 11. CRUD de Tareas (Admin Registrados)  ✅
 Los administradores tendrán el control total sobre las tareas, incluyendo todas las acciones de un CRUD. 📂
 
 ---

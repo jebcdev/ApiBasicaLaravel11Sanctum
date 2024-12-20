@@ -17,7 +17,23 @@ class AdminTaskController extends Controller
     public function index()
     {
         try {
-            
+            $tasks =
+                Task::query()
+                ->with([
+                    'user',
+                    'category',
+                    'status'
+                ])
+                ->orderBy('created_at', 'DESC')
+                ->get();
+
+            return ApiResponses::Success(
+                'Admin Tasks Index',
+                [
+                    'tasks_count' => $tasks->count(),
+                    'tasks' => $tasks,
+                ]
+            );
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -29,7 +45,15 @@ class AdminTaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         try {
-            
+            $data = $request->validated();
+
+            $newRecord = Task::create($data);
+            $newRecord->load([
+                'user',
+                'category',
+                'status'
+            ]);
+            return ApiResponses::Success('Admin Task Created', $newRecord);
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -41,7 +65,12 @@ class AdminTaskController extends Controller
     public function show(Task $task)
     {
         try {
-            
+            $task->load([
+                'user',
+                'category',
+                'status'
+            ]);
+            return ApiResponses::Success('Admin Task Details', $task);
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -53,7 +82,15 @@ class AdminTaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task)
     {
         try {
-            
+            $data = $request->validated();
+
+            $task->update($data);
+            $task->load([
+                'user',
+                'category',
+                'status'
+            ]);
+            return ApiResponses::Success('Admin Task Updated', $task);
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -65,7 +102,8 @@ class AdminTaskController extends Controller
     public function destroy(Task $task)
     {
         try {
-            
+            $task->delete();
+            return ApiResponses::Success('Admin Task Deleted', [null], 200);
         } catch (\Throwable $th) {
             throw $th;
         }
